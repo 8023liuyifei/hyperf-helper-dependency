@@ -14,11 +14,12 @@ namespace HyperfHelper\Dependency\Annotation;
 
 use Attribute;
 use Hyperf\Di\Annotation\AbstractAnnotation;
+use Hyperf\Di\Annotation\AnnotationInterface;
 use HyperfHelper\Dependency\Annotation\Collector\DependencyCollector;
 use ReflectionException;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Dependency extends AbstractAnnotation
+class Dependency extends AbstractAnnotation implements AnnotationInterface
 {
     /**
      * @param string<class-string> $identifier 接口类
