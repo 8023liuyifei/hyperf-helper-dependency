@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace HyperfHelper\Dependency;
 
-
 use HyperfHelper\Dependency\Annotation\Collector\DependencyCollector;
 
 class ConfigProvider
@@ -31,7 +30,7 @@ class ConfigProvider
                     ],
                     'collectors' => [
                         DependencyCollector::class,
-                    ]
+                    ],
                 ],
             ],
         ];
