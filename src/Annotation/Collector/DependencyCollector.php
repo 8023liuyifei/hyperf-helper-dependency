@@ -1,6 +1,14 @@
 <?php
 
 declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 
 namespace HyperfHelper\Dependency\Annotation\Collector;
 
@@ -80,11 +88,11 @@ class DependencyCollector extends MetadataCollector
      */
     protected static function getContainerDependencyItem(string $identifier): array
     {
-        if (!isset(self::$container['d'])) {
+        if (! isset(self::$container['d'])) {
             goto DEFAULT_RETURN;
         }
 
-        if (!isset(self::$container['d'][$identifier])) {
+        if (! isset(self::$container['d'][$identifier])) {
             goto DEFAULT_RETURN;
         }
 
