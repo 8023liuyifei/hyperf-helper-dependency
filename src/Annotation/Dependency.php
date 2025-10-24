@@ -6,12 +6,13 @@ namespace HyperfHelper\Dependency\Annotation;
 
 
 use Attribute;
+use Hyperf\Di\Annotation\AbstractAnnotation;
 use Hyperf\Di\Annotation\AnnotationInterface;
 use HyperfHelper\Dependency\Annotation\Collector\DependencyCollector;
 use ReflectionException;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Dependency implements AnnotationInterface
+class Dependency extends AbstractAnnotation implements AnnotationInterface
 {
 
     /**
@@ -28,18 +29,5 @@ class Dependency implements AnnotationInterface
     public function collectClass(string $className): void
     {
         DependencyCollector::collectorDependency($className, $this->identifier, $this->priority);
-    }
-
-    public function collectClassConstant(string $className, ?string $target): void
-    {
-    }
-
-
-    public function collectMethod(string $className, ?string $target): void
-    {
-    }
-
-    public function collectProperty(string $className, ?string $target): void
-    {
     }
 }
